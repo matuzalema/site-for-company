@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Mali:700&subset=latin-ext');
+
+
+/* =================== variables ========================= */
+
+$color-one: #fff; /*white*/
+$color-two: #000; /*black*/
+$color-three: #02C5E8; /*blue*/
+$color-four: #313332; /*grey*/
+
+/* =================== prefix ========================= */
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+  	-moz-border-radius: $radius;
+  	-ms-border-radius: $radius;
+  	border-radius: $radius;
+}
+
+@mixin text-decoration($none) {
+	-webkit-text-decoration: $none;
+  	-moz-text-decoration: $none;
+  	-ms-text-decoration: $none;
+  	text-decoration: $none;
+}
+
+/* =================== prefix ========================= */
+
+.wrapper {
+	text-align: center;
+	width: 80%;
+}
+
+
+/* =================== site ========================= */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	color: $color-four;
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+}
+
+
+.main-heading {
+	color: $color-one;
+	text-transform: uppercase;
+	font-weight:200;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.second-heading {
+	font-size: 20px;
+	color: $color-one;
+	text-transform: uppercase;
+}
+
+.third-heading {
+	font-size: 18px;
+	text-transform: uppercase;
+	color: $color-four;
+	font-weight: 600;
+}
+
+/*================== header ====================*/
+
+header {
+	height: 50px;
+	background-color:$color-four;
+
+
+	nav>ul {
+		margin: 0;
+		padding: 0;
+		float: right;
+		list-style-type: none;
+		display: inline-block;
+	
+
+		li {
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			line-height: 50px;
+			padding: 0 20px;
+			&:hover {
+			background-color: #adadad;
+			}
+			&:first-child a {
+			color: $color-three;
+			}
+		
+
+			a {
+				@include text-decoration(none);
+				color: $color-one;
+				font-size: 15px;
+				text-transform: uppercase;
+				display: block;
+				color: $color-one;
+
+				&:hover{
+				background-color: #adadad;
+				color: $color-three;
+				}
+			}
+		}
+	}
+}
+
+.logo {
+	display: inline;
+	font-family: 'Great Vibes', cursive;
+	color: $color-one;
+	font-size: 30px;
+	padding-left: 30px;
+	font-weight: bold;
+	line-height: 60px;
+}
+
+/*================== hero ====================*/
+
+.hero {
+	background-image: url("https://images.pexels.com/photos/275582/pexels-photo-275582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	background-size: cover;
+	background-position: center;
+	height: calc(100vh - 70px);	
+}
+
+.slogan {
+	padding: 20px;
+	max-width: 800px;
+	width: 40%;
+	float: right;
+	background: rgba(0, 0, 0, 0.5);
+	margin-top: 15%;
+}
+
+.bold {
+	font-weight: 800;
+}
+
+.thin {
+	font-weight: 200;
+}
+
+/*================== benefits ====================*/
+.benefits {
+
+	.main-heading {
+		color: $color-four;
+	}
+
+	.container {
+		@extend .wrapper;
+		margin: 50px auto;
+	}
+
+	i {
+	font-size: 80px;
+	background-color: $color-four;
+	color: $color-one;
+	height: 120px;
+	width: 120px;
+	line-height: 120px;
+	text-align: center;
+	@include border-radius(10px);
+	}
+
+	i.fa-home {
+		background-color: $color-three;
+	}
+
+	.col:nth-child(2) h2 {
+		color: $color-three;
+	}
+
+	h2 {
+		margin-top: 10px;
+	}
+}
+/*================== gallery ====================*/
+
+.gallery {
+	img {
+		height: 200px;
+		width: 100%;
+		object-fit: cover;
+		}
+
+	.col {
+	padding: 0;
+	height: 200px;
+	position: relative;
+	&:hover .layer {
+    	display: block;
+    	cursor: pointer;
+		}
+	}
+}
+
+.layer {
+	height: 200px;
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: none;
+
+
+	i {
+		color: $color-four;
+		font-size: 10px;
+		margin-top:70px;
+		padding: 10px;
+		background-color: $color-one;
+		@include border-radius(5px);
+		margin-left: 20px;
+		height:30px;
+		width: 30px;
+	}
+}
+
+.fas.fa-link {
+	transform: rotate(90deg);
+}
+
+/*================== team ====================*/
+
+.team {
+	img {
+	width: 230px;
+	height: 230px;
+	@include border-radius(50%);
+	object-fit: cover;
+	padding: 10px;
+	}
+	.container {
+	@extend .wrapper;
+	margin: 70px auto;
+	}
+}
+
+/*================== about us ====================*/
+
+.about {
+	background-color: $color-two;
+	color: $color-one;
+	padding:20px;
+
+	img {
+		width: 100%;
+	}
+
+	.text-left {
+		float: left;
+		width: 50%;
+	}
+
+	.text-right {
+		float: left;
+		font-style: italic;
+		width: 30%;
+		margin-left: 30px;
+	}
+}
+/*==================numbers ====================*/
+
+.number {
+	color: $color-four;
+	font-size: 50px;
+	font-weight: 700;
+	font-family: 'Mali', cursive;
+}
+
+.numbers {
+	
+	.container {
+	@extend .wrapper;
+	margin: 20px auto;
+	}
+
+
+	p:nth-child(2) {
+	text-transform: uppercase;
+	color: $color-three;
+	margin: 0;
+	}
+}
+/*================== footer ====================*/
+
+
+footer {
+	color: $color-one;
+	background-color: $color-four;
+	display: flex;
+	display: relative;
+
+
+	.third-heading {
+		margin-bottom: 20px;
+		position: relative;
+		padding-bottom: 10px;
+		color: $color-one;
+
+		&::after {
+	    content: '';
+	    border-bottom: 2px solid #fff;
+	    width: 70px;
+	    position: absolute;
+	    margin: 10px 0 0 20px;
+		}
+	}
+}
+
+.get-in-touch {
+	p {
+		margin: 0;
+	}
+
+	.col {
+		padding:0 0 15px 0;
+	}
+}
+
+.social-media i {
+	color: $color-one;
+	background-color: $color-three;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin: 5px;
+	cursor: pointer;
+}
+
+/*================== copyright ====================*/
+
+.copyright {
+	background-color: #1c1b1b;
+
+	p {
+		text-align: center;
+		color: $color-one;
+		margin: 0;
+	}
+}
+/*================== grid ====================*/
+
+.row::before, .row::after {
+	content:"";
+	display: table;
+	clear: both;
+}
+
+[class*="col-"] {
+	float: left;
+	min-height: 1px;
+	padding: 12px;
+	width: 100%;
+}
+
+/*================== @media ====================*/
+
+@media (max-width: 767px){
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+
+@media (min-width: 768px) {
+    /* For desktop: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+}
+
+@media (min-width: 992px) {
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.col-offset-1 {margin-left: 8.33%;}
+.col-offset-2 {margin-left: 16.66%;}
+.col-offset-3 {margin-left: 25%;}
+.col-offset-4 {margin-left: 33.33%;}
+.col-offset-5 {margin-left: 41.66%;}
+.col-offset-6 {margin-left: 50%;}
+.col-offset-7 {margin-left: 58.33%;}
+.col-offset-8 {margin-left: 66.66%;}
+.col-offset-9 {margin-left: 75%;}
+.col-offset-10 {margin-left: 83.33%;}
+.col-offset-11 {margin-left: 91.66%;}
+.col-offset-12 {margin-left: 100%;}
+}
+
+/*================== @media phon ====================*/
+
+@media(max-width: 767px) {
+	
+
+	header>nav>ul {
+		float: none;
+		display: block;
+		text-align: right;
+		margin-right: 20px;
+
+		li {
+		display: block;
+		}
+	}
+
+	.slogan {
+		padding: 20px;
+		width: 80%;
+		margin-top: 300px;
+	}
+
+	.layer i, .gallery .col:hover .layer{
+		display: none;
+	}
+	
+	footer {
+		text-align: center;
+	 
+
+		.third-heading::after {
+	    margin-top: 40px;
+	    margin-left: -100px;
+		}
+
+		.about-footer::after {
+		margin-left: -83px;
+		}
+	}
+}
